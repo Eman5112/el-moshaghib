@@ -159,7 +159,26 @@
       position: relative;
       overflow: hidden;
     }
-
+.device-btn {
+    display: inline-block;
+    align-items: center;
+    margin-top: 1.5rem;
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #00d4ff, #1e3a8a);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+.device-btn:hover {
+    background: linear-gradient(135deg, #00bcd4, #1a365d);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
     .back-btn::before {
       content: '';
       position: absolute;
@@ -280,6 +299,7 @@
           <h3>أجهزة الكمبيوتر</h3>
           <p>كمبيوترات مكتبية ومحمولة عالية الأداء تناسب جميع الاستخدامات من العمل المكتبي إلى الألعاب والتصميم</p>
         </div>
+        <button class="device-btn">اعرف المزيد</button>
       </div>
 
       <div class="card">
@@ -341,7 +361,12 @@
         particlesContainer.appendChild(particle);
       }
     }
-
+const DeviceButtons = document.querySelectorAll('.device-btn');
+        DeviceButtons.forEach(btn => {
+            btn.addEventListener('click', function() {
+                window.location.href = 'computers.html';
+            });
+        });
     // Add staggered animation to cards
     function animateCards() {
       const cards = document.querySelectorAll('.card');
